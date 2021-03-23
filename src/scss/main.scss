@@ -1,9 +1,24 @@
+@font-face {
+    font-family: "Movement Direct Black";
+    src:    url(../fonts/Movement-DirectBlack.woff2) format('woff2'),
+            url(../fonts/Movement-DirectBlack.woff) format('woff');
+}
+
+@font-face {
+    font-family: "Movement Direct Thin";
+    src:    url(../fonts/Movement-DirectThin.woff2) format('woff2'),
+            url(../fonts/Movement-DirectThin.woff) format('woff');
+}
+
+
 $colors: (
 	"brown": #534e4d,
 	"palebrown": #b4967f,
 	"blue": #8d9da6,
 	"green": #9cafa8,
 );
+
+$primary: #534e4d;
 
 $display-font-sizes: (
 	1: 8rem,
@@ -16,6 +31,12 @@ $display-font-sizes: (
 
 // This is where you can import other stylesheets or write your scss code
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .landing,
 .about,
@@ -42,14 +63,15 @@ $display-font-sizes: (
 	}
 }
 
-.landing {
-	font-family: "Architects Daughter", cursive;
-	color: map-get($colors, "brown");
-}
-
-.landing {
+.landing,
+.about,
+.projects,
+.contact  {
 	display: grid;
-	grid-template-rows: 200px 1fr 75px;
+    height: 100vh;
+	grid-template-rows: 15% 1fr 10%;
+    font-family: "Architects Daughter", cursive;
+	color: map-get($colors, "brown");
 }
 
 .landing-portrait {
@@ -64,8 +86,21 @@ $display-font-sizes: (
 	);
 }
 
-nav {
-	font-size: 3rem;
+.landing-portrait img {
+    width: 500px;
+    height: auto;
+}
+
+h1 {
+    font-family: "Movement Direct Black", "Architects Daughter", cursive;
+}
+
+h2 {
+    font-family: "Movement Direct Thin", "Architects Daughter", cursive;
+}
+
+footer p {
+    font-size: .85rem;
 }
 
 // .nav-dropdown {
@@ -78,3 +113,32 @@ nav {
 // .nav-dropdown-trigger:focus .nav-dropdown {
 //     display: block;
 // }
+
+@include media-breakpoint-down(sm) {
+    .landing,
+    .about,
+    .projects,
+    .contact {
+        padding: .75rem;
+    }
+
+    .landing header {
+        nav {
+            font-size: 0.85rem;
+        }
+    }
+
+    .landing a {
+        padding: 0 .5rem;
+    }
+
+    .landing main {
+        flex-direction: column;
+    }
+
+    footer {
+        p {
+            font-size: .6rem;
+        }
+    }
+}

@@ -1,2 +1,80 @@
+$colors: (
+	"brown": #534e4d,
+	"palebrown": #b4967f,
+	"blue": #8d9da6,
+	"green": #9cafa8,
+);
+
+$display-font-sizes: (
+	1: 8rem,
+	2: 4.5rem,
+	3: 4rem,
+	4: 3.5rem,
+	5: 3rem,
+	6: 2.5rem,
+) !default;
+
 // This is where you can import other stylesheets or write your scss code
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+.landing,
+.about,
+.projects,
+.contact {
+	height: 100vh;
+	background: linear-gradient(
+		45deg,
+		map-get($colors, "blue"),
+		map-get($colors, "green"),
+		map-get($colors, "palebrown")
+	);
+	background-size: 600%;
+	background-position: 0%;
+	animation: BGSlider 10s infinite alternate;
+}
+
+@keyframes BGSlider {
+	0% {
+		background-position: 0%;
+	}
+	100% {
+		background-position: 100%;
+	}
+}
+
+.landing {
+	font-family: "Architects Daughter", cursive;
+	color: map-get($colors, "brown");
+}
+
+.landing {
+	display: grid;
+	grid-template-rows: 200px 1fr 75px;
+}
+
+.landing-portrait {
+	clip-path: polygon(
+		50% 100%,
+		90% 80%,
+		100% 40%,
+		75% 0%,
+		25% 0%,
+		0% 40%,
+		10% 80%
+	);
+}
+
+nav {
+	font-size: 3rem;
+}
+
+// .nav-dropdown {
+//     display: none;
+//     position: absolute;
+//     z-index: 100;
+// }
+
+// .nav-dropdown-trigger:hover .nav-dropdown,
+// .nav-dropdown-trigger:focus .nav-dropdown {
+//     display: block;
+// }

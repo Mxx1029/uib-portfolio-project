@@ -1,5 +1,5 @@
 {
-  "name": "UIB Portofolio DCI project Maxie",
+  "name": "UIB_Portofolio_DCI_project_Maxie",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
@@ -19,7 +19,7 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.6.x"
+    "bootstrap": "^5.0.0-beta2"
   },
   "devDependencies": {
     "gh-pages": "latest",

@@ -10701,8 +10701,19 @@ footer p {
   clip-path: polygon(50% 100%, 90% 80%, 100% 40%, 75% 0%, 25% 0%, 0% 40%, 10% 80%);
 }
 
+.about-container {
+  width: 75%;
+}
+.about-container .about-container-body {
+  width: 75%;
+}
+
 .img-container {
   height: 300px;
+}
+
+form {
+  width: 50%;
 }
 
 @media (max-width: 575.98px) {
@@ -10713,20 +10724,61 @@ footer p {
     padding: 0.75rem;
   }
 
-  .landing header nav {
+  nav.lead {
     font-size: 0.85rem;
   }
 
-  .landing a {
+  .nav {
+    padding-left: 0.5rem;
+  }
+
+  .landing a,
+.about a,
+.projects a,
+.contact a {
     padding: 0 0.5rem;
+  }
+
+  .portrait-small {
+    display: none;
+  }
+
+  .subheading-sm {
+    font-size: 1.25rem;
+    padding-left: 0.85rem;
+  }
+
+  footer p {
+    font-size: 0.6rem;
   }
 
   .landing main {
     flex-direction: column;
   }
 
-  footer p {
-    font-size: 0.6rem;
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+  }
+  .about-container .about-container-body p {
+    font-size: 1rem;
+  }
+
+  .projects main {
+    padding: 0 1.5rem;
+  }
+
+  .row {
+    margin-top: 0;
+  }
+
+  form {
+    width: 95%;
+  }
+
+  .contact main {
+    margin-bottom: 2rem;
   }
 }
 

@@ -1,15 +1,14 @@
 @font-face {
-    font-family: "Movement Direct Black";
-    src:    url(../fonts/Movement-DirectBlack.woff2) format('woff2'),
-            url(../fonts/Movement-DirectBlack.woff) format('woff');
+	font-family: "Movement Direct Black";
+	src: url(../fonts/Movement-DirectBlack.woff2) format("woff2"),
+		url(../fonts/Movement-DirectBlack.woff) format("woff");
 }
 
 @font-face {
-    font-family: "Movement Direct Thin";
-    src:    url(../fonts/Movement-DirectThin.woff2) format('woff2'),
-            url(../fonts/Movement-DirectThin.woff) format('woff');
+	font-family: "Movement Direct Thin";
+	src: url(../fonts/Movement-DirectThin.woff2) format("woff2"),
+		url(../fonts/Movement-DirectThin.woff) format("woff");
 }
-
 
 $colors: (
 	"brown": #534e4d,
@@ -30,27 +29,17 @@ $display-font-sizes: (
 	6: 2.5rem,
 ) !default;
 
-
-
 // This is where you can import other stylesheets or write your scss code
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-$polygon: polygon(
-    50% 100%,
-    90% 80%,
-    100% 40%,
-    75% 0%,
-    25% 0%,
-    0% 40%,
-    10% 80%
-);
+$polygon: polygon(50% 100%, 90% 80%, 100% 40%, 75% 0%, 25% 0%, 0% 40%, 10% 80%);
 
 // General styles over all pages
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 .landing,
@@ -81,37 +70,37 @@ $polygon: polygon(
 .landing,
 .about,
 .projects,
-.contact  {
+.contact {
 	display: grid;
-    height: 100vh;
+	height: 100vh;
 	grid-template-rows: 15% 1fr 10%;
-    font-family: "Architects Daughter", cursive;
+	font-family: "Architects Daughter", cursive;
 	color: map-get($colors, "brown");
 }
 
 h1 {
-    font-family: "Movement Direct Black", "Architects Daughter", cursive;
+	font-family: "Movement Direct Black", "Architects Daughter", cursive;
 }
 
 h2 {
-    font-family: "Movement Direct Thin", "Architects Daughter", cursive;
+	font-family: "Movement Direct Thin", "Architects Daughter", cursive;
 }
 
 footer p {
-    font-size: .85rem;
+	font-size: 0.85rem;
 }
 
 // Focus nav links & border around cards in same style as input fields on contact page
 
 .focus-field:focus {
-    border-radius: 5px;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(83, 78, 77, 0.25);
+	border-radius: 5px;
+	outline: 0;
+	box-shadow: 0 0 0 0.25rem rgba(83, 78, 77, 0.25);
 }
 
 .card {
-    border-radius: 3px;
-    box-shadow: 0 0 0 0.25rem rgba(83, 78, 77, 0.25);
+	border-radius: 3px;
+	box-shadow: 0 0 0 0.25rem rgba(83, 78, 77, 0.25);
 }
 
 // Landing page styles
@@ -121,26 +110,40 @@ footer p {
 }
 
 .landing-portrait img {
-    width: 500px;
-    height: auto;
+	width: 500px;
+	height: auto;
 }
 
 // Specific style for small portrait in nav bar
 
 .portrait-small {
-    background-image: url(../images/izzy_portrait.jpeg);
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-    clip-path: $polygon;
+	background-image: url(../images/izzy_portrait.jpeg);
+	background-size: cover;
+	width: 50px;
+	height: 50px;
+	clip-path: $polygon;
 }
 
 // About page styles
 
+.about-container {
+    width: 75%;
+    .about-container-body {
+        width: 75%;
+    }
+}
+
+
 // Projects page styles
 
 .img-container {
-    height: 300px;
+	height: 300px;
+}
+
+// Contact page styles 
+
+form {
+    width: 50%;
 }
 
 // .nav-dropdown {
@@ -155,30 +158,83 @@ footer p {
 // }
 
 @include media-breakpoint-down(sm) {
-    .landing,
-    .about,
+
+    // General styles 
+
+	.landing,
+	.about,
     .projects,
-    .contact {
-        padding: .75rem;
+	.contact {
+		padding: 0.75rem;
+	}
+
+	
+
+	nav.lead {
+		font-size: 0.85rem;
+	}
+
+    .nav {
+        padding-left: .5rem;
     }
 
-    .landing header {
-        nav {
-            font-size: 0.85rem;
-        }
+	.landing a,
+	.about a,
+	.projects a,
+	.contact a {
+		padding: 0 0.5rem;
+	}
+
+	.portrait-small {
+		display: none;
+	}
+	
+    .subheading-sm {
+      font-size: 1.25rem;
+      padding-left: .85rem;
     }
 
-    .landing a {
-        padding: 0 .5rem;
+	footer {
+		p {
+			font-size: 0.6rem;
+		}
+	}
+
+    // Landing page styles
+
+	.landing main {
+		flex-direction: column;
+	}
+
+    // About page styles
+
+    .about-container {
+		flex-direction: column;
+        align-items: center;
+        width: 95%;
+		.about-container-body p {
+            font-size: 1rem;
+		}
+	}
+
+    // Project page mobile styles
+
+    .projects main {
+		padding: 0 1.5rem;
+	}
+
+    .row {
+        margin-top: 0;
     }
 
-    .landing main {
-        flex-direction: column;
+    // Contact page styles 
+
+    form {
+        width: 95%;
     }
 
-    footer {
-        p {
-            font-size: .6rem;
-        }
+    .contact main {
+        margin-bottom: 2rem;
     }
+
 }

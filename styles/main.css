@@ -10636,9 +10636,9 @@ textarea.form-control-lg {
 .projects,
 .contact {
   height: 100vh;
-  background: linear-gradient(45deg, #8d9da6, #9cafa8, #b4967f);
+  background: linear-gradient(90deg, #8d9da6, #9cafa8, #b4967f);
   background-size: 600%;
-  background-position: 0%;
+  background-position: center;
   animation: BGSlider 10s infinite alternate;
 }
 

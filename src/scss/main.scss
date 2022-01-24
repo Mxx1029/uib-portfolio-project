@@ -95,7 +95,7 @@ footer p {
 .focus-field:focus {
 	border-radius: 5px;
 	outline: 0;
-	box-shadow: 0 0 0 0.25rem rgba(83, 78, 77, 0.25);
+	box-shadow: 0 0 0 0.25rem rgba(83, 78, 77, 0.251);
 }
 
 .card {
@@ -138,6 +138,10 @@ footer p {
 
 .img-container {
 	height: 300px;
+}
+
+.card-text {
+    min-height: 75px;
 }
 
 // Contact page styles 
